@@ -25,6 +25,7 @@ var Point = function(x,y){
 };
 
 var Line = function(begin,end,lineWidth,lineColor){
+	this.type = "line";
 	var beginPoint = new Point(begin.x, begin.y);
 	var endPoint = new Point(end.x, end.y);
 	var width = typeof lineWidth === "undefined" ? 5 : lineWidth;
@@ -53,6 +54,7 @@ var Line = function(begin,end,lineWidth,lineColor){
 };
 
 var Rectangle = function(keyPoint, width, height, rectColor){
+	this.type = "rectangle";
 	var a = new Point(keyPoint.x, keyPoint.y);
 	var b = new Point(keyPoint.x+width, keyPoint.y);
 	var c = new Point(keyPoint.x+width, keyPoint.y+height);
@@ -87,6 +89,7 @@ var Rectangle = function(keyPoint, width, height, rectColor){
 }
 
 var Circle = function(center, r, circleColor){
+	this.type = "circle";
 	var centerOfcircle = new Point(center.x, center.y);
 	var radius = r;
 	var color = typeof circleColor === "undefined" ? "black" : circleColor;
@@ -119,6 +122,7 @@ var Circle = function(center, r, circleColor){
 }
 
 var Polygon = function(pList, circleColor){
+	this.type = "polygon";
 	var pointsList = new Array();
 	for(var i=0; i<pList.length; ++i){
 		pointsList[i] = new Point(pList[i].x, pList[i].y);
@@ -203,6 +207,12 @@ var Polygon = function(pList, circleColor){
 	}
 	getPolygonExcenter();//计算多边形的最小覆盖圆
 
+	this.getCircumCircle = function(){
+		return circumcircle;
+	}
+	this.getPointList = function(){
+		return pointsList;
+	}
 	this.rotate = function(center, angle){
 		for(var i=0; i<pointsList.length; ++i){
 			pointsList[i].rotate(center, angle);
@@ -230,19 +240,7 @@ var Polygon = function(pList, circleColor){
 
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
-// var rectangle = new Rectangle({x:300,y:100}, 50, 50);
-// var circle = new Circle({x:250, y:200}, 50);
 
-var pList = new Array();
-pList[0] = {x: 0, y: 0};
-pList[1] = {x: 120, y: 10};
-pList[2] = {x: 100, y: 100};
-pList[3] = {x: 50, y: 150};
-pList[4] = {x: 20, y: 100};
-pList[5] = {x: 0, y: 80};
 
-var polygon = new Polygon(pList);
-polygon.move({x:100, y:50});
-polygon.draw(context);
 
 

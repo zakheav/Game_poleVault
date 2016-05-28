@@ -1,4 +1,4 @@
-var matrixMmatrix = function(matrixLeft, matrixRight){//矩阵与矩阵相乘
+var matrixMmatrix = function(matrixLeft, matrixRight){// 矩阵与矩阵相乘
 	var lrow = matrixLeft.length;
 	var lcol = matrixLeft[0].length;
 	var rrow = matrixRight.length;
@@ -25,7 +25,7 @@ var matrixMmatrix = function(matrixLeft, matrixRight){//矩阵与矩阵相乘
 	}
 }	
 
-var vectorMmatrix = function(vector, matrix){//向量与矩阵相乘
+var vectorMmatrix = function(vector, matrix){// 向量与矩阵相乘
 	var vsize = vector.length;
 	var mrow = matrix.length;
 	var mcol = matrix[0].length;
@@ -46,7 +46,7 @@ var vectorMmatrix = function(vector, matrix){//向量与矩阵相乘
 	}
 }
 
-var vectorMvector = function(vector1, vector2){//向量点乘
+var vectorMvector = function(vector1, vector2){// 向量点乘
 	var result = 0;
 	if(vector1.length == vector2.length){
 		for(var i=0; i<vector1.length; ++i){
@@ -59,15 +59,15 @@ var vectorMvector = function(vector1, vector2){//向量点乘
 	
 }
 
-var dist2D = function(point1, point2){//二维空间内的欧式距离
+var vectorAdd = function(v1, v2){// 向量加法
+	if(v1.length != v2.length) return;
+	for(var i=0; i<v1.length; ++i){
+		v1[i] = v1[i]+v2[i];
+	}
+}
+
+var dist2D = function(point1, point2){// 二维空间内的欧式距离
 	return Math.sqrt( Math.pow(point1.x - point2.x, 2) + Math.pow(point1.y - point2.y, 2) );
 }
 
-// var vector = new Array(1,2);
-// var matrix = [[1,2,3],[4,5,6]];
-// var matrix2 = [[1,4],[2,5],[3,6]];
-// console.log(vectorMmatrix(vector,matrix));
-// console.log(matrixMmatrix(matrix,matrix2));
-// console.log(vectorMvector(vector,vector));
-// console.log(dist2D({x:1,y:10},{x:2,y:12}));
 

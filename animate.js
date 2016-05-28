@@ -1,4 +1,4 @@
-
+// 需要修改
 var Move = function(dx, dy, t, start){// 每次移动的dx，dy，总共移动的次数，开始时间
 	this.direction = {
 		x:dx,
@@ -23,7 +23,7 @@ var Animate = function(obj, mlist, rlist, start){// mlist是Move对象数组， 
 
 var finishAnimate = 0;// 记录完成动画的对象数目
 var timeStamp = 0;// 时间戳
-var animateList = new Array();
+var animateList = new Array();// 元素是Animate
 function animateActive( callback ){
 	++timeStamp;
 	context.clearRect(0,0,context.canvas.width,context.canvas.height);// 清空画布

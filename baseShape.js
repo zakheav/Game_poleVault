@@ -234,12 +234,12 @@ var Polygon = function(pList, circleColor){
 		}
 		context.closePath();
 		context.fill();
-		circumcircle.drawHollow(context);
+		//circumcircle.drawHollow(context);
 	};
 }
 
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
+// var canvas = document.getElementById("canvas");
+// var context = canvas.getContext("2d");
 
 
 

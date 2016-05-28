@@ -65,17 +65,17 @@ var polygonCollision = function(polygon1, polygon2){
 	}
 }
 
-var pList = new Array();
-pList[0] = {x: 60, y: 0};
-pList[1] = {x: 120, y: 10};
-pList[2] = {x: 100, y: 100};
-pList[3] = {x: 20, y: 150};
-pList[4] = {x: 20, y: 100};
-pList[5] = {x: 0, y: 80};
+// var pList = new Array();
+// pList[0] = {x: 60, y: 0};
+// pList[1] = {x: 120, y: 10};
+// pList[2] = {x: 100, y: 100};
+// pList[3] = {x: 20, y: 150};
+// pList[4] = {x: 20, y: 100};
+// pList[5] = {x: 0, y: 80};
 
-var polygon1 = new Polygon(pList);
-var polygon2 = new Polygon(pList);
-polygon1.move({x:150, y:50});
-polygon1.draw(context);
-polygon2.draw(context);
-console.log( polygonCollision(polygon1, polygon2) );
+// var polygon1 = new Polygon(pList);
+// var polygon2 = new Polygon(pList);
+// polygon1.move({x:150, y:50});
+// polygon1.draw(context);
+// polygon2.draw(context);
+// console.log( polygonCollision(polygon1, polygon2) );
